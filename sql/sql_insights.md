@@ -2,43 +2,21 @@
 
 ## Key Insights from the Required Queries
 
-### Slowest Customer Areas (last 30 days)
-
-> Identify top 5 customer areas with the highest average delivery time.
-
-These areas consistently experience the longest delivery times. It is likely due to distance from restaurants or limited rider availability. We should research the cause in order to create a plan of action.
-
-### Delivery Time by Traffic & Cuisine
-
-> Compare average delivery times across traffic conditions, grouped by restaurant area and cuisine type.
-
-This comparison may reveal combinations of traffic conditions and cuisine types that generate delays. For example, cuisines with longer prep times for example Italian or Indian can be a major driver of delays.
-
-### Fastest Delivery People
-
-> Top 10 fastest riders, only active ones with 50 or more deliveries.
-
-Identifies consistently high-performing riders. We can then promote this behavior with recognition programs.
-
-### Most Profitable Restaurant Area (last 3 months)
-
-> Find the restaurant area with the highest total order value.
-
-Identifies areas that generate the most revenue, which would be key to prioritizing staffing and logistics.
-
-### Drivers Trending Slower
-
-> Detect drivers whose average delivery times are increasing over time.
-
-May show riders whose performance is declining, helping Ops decide where interventions like training or workload adjustments are needed.
+| Section | Objective | Possible Insight |
+|---------|-----------|------------------|
+| Slowest Customer Areas | Identify top 5 customer areas with the highest average delivery time in the last 30 days | These areas consistently experience the longest delivery times. It is likely due to distance from restaurants or limited rider availability. We should research the cause in order to create a plan of action. |
+| Delivery Time by Traffic & Cuisine | Compare average delivery times across traffic conditions, grouped by restaurant area and cuisine type | This comparison may reveal combinations of traffic conditions and cuisine types that generate delays. For example, cuisines with longer prep times for example Italian or Indian can be a major driver of delays. |
+| Fastest Delivery People | Top 10 fastest riders, only active ones with 50 or more deliveries | Identifies consistently high-performing riders. We can then promote this behavior with recognition programs. |
+| Most Profitable Restaurant Area  | Find the restaurant area with the highest total order value | Identifies areas that generate the most revenue, which would be key to prioritizing staffing and logistics. |
+| Drivers Trending Slower | Detect drivers whose average delivery times are increasing over time | May show riders whose performance is declining, helping Ops decide where interventions like training or workload adjustments are needed. |
 
 ## 2. Additional Exploratory Questions
 
 ### Ratings vs Delivery Time
 
-> Average rating grouped into delivery time buckets.
+**Objective:** Average rating grouped into delivery time buckets.
 
-This could reveal how much customer satisfaction is affected by longer delivery times.
+**Possible Insight**: This could reveal how much customer satisfaction is affected by longer delivery times.
 
 **Query:**
 
@@ -53,9 +31,9 @@ ORDER BY time_bucket;
 
 ### Weather Impact
 
-> Average delivery time by weather condition.
+**Objective:** Average delivery time by weather condition.
 
-It can reflect how rain, storms, or fog affect delivery speed.
+**Possible Insight**: It can reflect how rain, storms, or fog affect delivery speed.
 
 **Query:**
 
