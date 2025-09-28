@@ -60,7 +60,7 @@ def train():
         subsample=1.0,
         min_child_weight=9,
         random_state=SEED,
-        n_jobs=-1
+        n_jobs=4
     )
 
     pipe = Pipeline([
