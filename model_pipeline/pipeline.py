@@ -21,12 +21,12 @@ def build_preprocessor():
     ])
 
     cat_onehot = Pipeline([
-        ("imputer", SimpleImputer(strategy="constant", fill_value="Unknown")),
+        ("imputer", SimpleImputer(strategy="most_frequent")),
         ("ohe", OneHotEncoder(handle_unknown="ignore", sparse_output=False))
     ])
 
     cat_ordinal = Pipeline([
-        ("imputer", SimpleImputer(strategy="constant", fill_value="Low")),
+        ("imputer", SimpleImputer(strategy="most_frequent")),
         ("ord", OrdinalEncoder(categories=[["Low","Medium","High"]]))
     ])
 
@@ -53,12 +53,12 @@ def train():
     pre = build_preprocessor()
 
     model = XGBRegressor(
-        objective="reg:squarederror",
-        n_estimators=300,
-        learning_rate=0.05,
-        max_depth=6,
-        subsample=0.8,
-        colsample_bytree=0.8,
+        objective="reg:absoluteerror",
+        n_estimators=700,
+        learning_rate=0.0311,
+        max_depth=3,
+        subsample=1.0,
+        min_child_weight=9,
         random_state=SEED,
         n_jobs=-1
     )
@@ -71,6 +71,7 @@ def train():
     pipe.fit(X_train, y_train)
     
     joblib.dump(pipe, MODEL_PATH)
+
     return MODEL_PATH
 
 
