@@ -14,12 +14,13 @@ _INPUT_COLUMNS = [
     "Traffic_Level",
 ]
 
+# To avoid loading the model each time the api is called
 @lru_cache(maxsize=1)
 def _get_model():
     return joblib.load(MODEL_PATH)
 
 def predict(payload: PredictRequest) -> float:
-    model = joblib.load(MODEL_PATH)
+    model = _get_model()
 
     row = pd.DataFrame([{
         "Distance_km": payload.distance_km,
