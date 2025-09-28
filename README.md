@@ -17,12 +17,12 @@ The goal: investigate delivery delays, build a predictive model for delivery tim
 ├── model_pipeline/       # Data preprocessing, training, evaluation
 │   ├── pipeline.py
 │   ├── config.py
+│   ├── notebooks/        # Jupyter notebooks for EDA & experiments
+│   ├── reports/          # Written reports and reflections
 │   ├── artifacts/
 │   │   └── model.pkl     # Trained model artifact
 │   └── data/             # Raw and testing datasets
 │
-├── notebooks/            # Jupyter notebooks for EDA & experiments
-├── reports/              # Written reports and reflections
 ├── sql/                  # SQL queries and schema files
 │   ├── sql_queries.sql
 │   ├── sql_insights.md
