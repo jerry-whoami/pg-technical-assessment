@@ -12,6 +12,8 @@ Analyze residuals (actual – predicted) to identify when and why the model unde
 - **Vehicle type**: Scooters give the most stable predictions. Cars, on the other hand, are tied to the largest underestimations.  
 - **Worst offenders**: The top 5 misses all involve long trips plus adverse conditions, with errors as high as 60+ minutes.  
 
+> Analysis was obtained from the best performing model at the end of the `03_model_experiments.ipynb` notebook.
+
 ## Residual Analysis
 
 ### By Distance

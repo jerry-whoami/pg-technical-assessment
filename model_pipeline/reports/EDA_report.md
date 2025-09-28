@@ -22,6 +22,8 @@ This dataset is designed for predicting food delivery times based on various inf
 
 > **Source**: [Kaggle: Food Delivery Time Prediction](https://www.kaggle.com/datasets/denkuznetz/food-delivery-time-prediction/).
 
+> Analysis was obtained from the `01-eda.ipynb` notebook.
+
 ## Data Quality Checks
 
 ### Missing values

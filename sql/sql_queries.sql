@@ -8,12 +8,13 @@ ORDER BY avg_delivery_time_min DESC
 LIMIT 5;
 
 -- 2. Average delivery time per traffic condition, by restaurant area and cuisine type.
-SELECT d.traffic_condition, 
-    d.restaurant_area, 
-    r.cuisine_type, 
-    ROUND(AVG(d.delivery_time_min), 2) AS avg_delivery_time_min
+SELECT d.traffic_condition,
+       d.restaurant_area,
+       r.cuisine_type,
+       ROUND(AVG(d.delivery_time_min), 2) AS avg_delivery_time_min
 FROM deliveries AS d
-JOIN restaurants AS r ON d.restaurant_area = r.area
+JOIN orders      AS o ON o.delivery_id   = d.delivery_id
+JOIN restaurants AS r ON r.restaurant_id = o.restaurant_id
 GROUP BY d.traffic_condition, d.restaurant_area, r.cuisine_type;
 
 -- 3. Top 10 delivery people with the fastest average delivery time, considering only those with at least 50 deliveries and who are still active.
@@ -26,7 +27,7 @@ JOIN deliveries AS d ON p.delivery_person_id = d.delivery_person_id
 WHERE p.is_active = TRUE
 GROUP BY p.delivery_person_id, p.name
 HAVING COUNT(*) >= 50
-ORDER BY avg_delivery_time_min DESC
+ORDER BY avg_delivery_time_min ASC
 LIMIT 10;
 
 -- 4. The most profitable restaurant area in the last 3 months, defined as the area with the highest total order value.
@@ -36,7 +37,7 @@ SELECT r.area,
 FROM orders o
 JOIN deliveries d ON o.delivery_id = d.delivery_id
 JOIN restaurants r ON o.restaurant_id = r.restaurant_id
-WHERE order_placed_at >= CURRENT_DATE - INTERVAL '3 months'
+WHERE d.order_placed_at >= CURRENT_DATE - INTERVAL '3 months'
 GROUP BY r.area
 ORDER BY total_order_value DESC, orders_count DESC
 LIMIT 1;
@@ -64,5 +65,6 @@ SELECT delivery_person_id,
     COUNT(*) AS months_observed
 FROM normalized
 GROUP BY delivery_person_id
-HAVING REGR_SLOPE(normalized_avg_time, month_number) > 0
+-- Only take into account driver's with sufficiente data and a positive slope (increasing trend)
+HAVING COUNT(*) >= 3 AND REGR_SLOPE(normalized_avg_time, month_number) > 0
 ORDER BY slope DESC;

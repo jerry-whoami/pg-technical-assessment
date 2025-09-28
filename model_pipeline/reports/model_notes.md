@@ -45,3 +45,5 @@ Predict **delivery_time_min** to improve ETA accuracy and support SLA planning. 
 - Random train/test split, 20% holdout for testing.
 - RandomizedSearchCV used 3-fold cross-validation within training for robust parameter tuning.
 - Stratification not applied because target is continuous and evenly distributed.
+
+> This decisions are reflected in the `03_model_experiments.ipynb` notebook and pipeline.
