@@ -1,5 +1,5 @@
 import pandas as pd
-import joblib
+import joblib, os
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
 from xgboost import XGBRegressor
@@ -69,7 +69,8 @@ def train():
     ])
 
     pipe.fit(X_train, y_train)
-    
+
+    os.makedirs(os.path.dirname(MODEL_PATH), exist_ok=True)
     joblib.dump(pipe, MODEL_PATH)
 
     return MODEL_PATH
