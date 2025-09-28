@@ -42,8 +42,8 @@ git clone git@github.com:jerry-whoami/pg-technical-assessment.git
 cd pg-technical-assessment
 
 python -m venv .venv
-source venv/bin/activate   # Linux/macOS
-venv\Scripts\activate      # Windows
+source .venv/bin/activate   # Linux/macOS
+.venv\Scripts\activate      # Windows
 
 pip install -r requirements.txt
 ````

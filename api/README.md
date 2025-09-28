@@ -19,8 +19,8 @@ cd pg-technical-assessment
 
 ```bash
 python -m venv venv
-source venv/bin/activate # For linux
-venv\Scripts\activate    # For Windows
+source .venv/bin/activate # For linux
+.venv\Scripts\activate    # For Windows
 ```
 3. **Install dependencies**
 
