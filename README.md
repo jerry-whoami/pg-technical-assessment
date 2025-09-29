@@ -89,5 +89,4 @@ Location: `api/`
 ## Notes
 
 * Dataset: [Kaggle — Food Delivery Time Prediction](https://www.kaggle.com/datasets/denkuznetz/food-delivery-time-prediction)
-* Python 3.10+ recommended
-* Generative AI tools were used for boilerplate code and documentation; outputs were validated and adapted for this project
+* Python 3.10+
