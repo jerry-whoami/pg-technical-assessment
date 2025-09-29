@@ -11,7 +11,7 @@ A simple FastAPI service for predicting food delivery times using a trained ML m
 1. **Clone the repository**
 
 ```bash
-git clone git@github.com:jerry-whoami/pg-technical-assessment.git
+git clone https://github.com/jerry-whoami/pg-technical-assessment.git
 cd pg-technical-assessment
 ```
 

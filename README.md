@@ -38,7 +38,7 @@ The goal: investigate delivery delays, build a predictive model for delivery tim
 Clone the repo and create a virtual environment:
 
 ```bash
-git clone git@github.com:jerry-whoami/pg-technical-assessment.git
+git clone https://github.com/jerry-whoami/pg-technical-assessment.git
 cd pg-technical-assessment
 
 python -m venv .venv
