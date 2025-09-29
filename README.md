@@ -1,7 +1,6 @@
 # Food Delivery Time Prediction — Technical Assessment
 
 This repository contains my submission for the **Data Science Technical Assessment**.  
-The goal: investigate delivery delays, build a predictive model for delivery time, and design queries/insights to help the Operations team respond more effectively.
 
 ## Repository Structure
 
